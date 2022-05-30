@@ -1,0 +1,360 @@
+﻿* {
+    font-family: Arial, serif;
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #000000;
+}
+
+/*--- formatting ---*/
+.right { float: right; }
+.left { float: left; }
+.top { top: 0; }
+.bottom { bottom: 0; }
+.middle { margin: 0 auto; }
+.revert { all: initial; }
+.unselectable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.right-text { text-align: right; }
+.left-text { text-align: left; }
+
+/*--- background ---*/
+#glCanvas {
+    position:absolute;
+    display: block;
+    background:black;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+/*--- objects ---*/
+hr {
+    margin: 20px 10px;
+    border: #2f2f2f solid 1px;
+}
+a {
+    cursor: pointer;
+    text-decoration: underline #28b075;
+    color: inherit;
+}
+a:hover {
+    text-decoration: none;
+}
+h1 {
+    font-size: 20px;
+}
+b, i, u {
+    font-size: inherit;
+    color: inherit;
+}
+.wiki {
+    margin-right: 25%;
+    margin-top: -10px;
+    font-size: 20px;
+    text-shadow: 0 2px 0 #000;
+    color: #28b075;
+}
+.button {
+    border: none;
+    border-radius: 3px;
+    background: inherit;
+    padding: 15px 25px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.button:hover {
+    background: rgba(164, 164, 164, 0.08);
+    text-shadow: 0 2px 0 #000;
+    text-decoration: none;
+}
+.matias {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+}
+.DONATE\! {
+    margin: 0 auto;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    background: #ffb700;
+    border: none;
+    font-size: 80px;
+    font-weight: bolder;
+    cursor: pointer;
+    color: #362800;
+    transition: 0.1s;
+}
+.DONATE\!:hover {
+    box-shadow: 0 0 30px #000;
+    color: black;
+}
+
+/*--- text ---*/
+p, h1, h2, h3, h4, h5, h6, ul, li, input, label, button, select {
+    color: #c6c6c6;
+    margin: 10px;
+}
+
+/*--- albums grid ---*/
+.album-grid {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, 1fr);
+    padding: 10px;
+}
+.single-grid {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 0.33fr));
+    grid-template-rows: repeat(auto-fit, 1fr);
+    padding: 10px;
+}
+.album {
+    background: #393939;
+    border-radius: 10px;
+    transition: 0.1s;
+    text-decoration: none;
+}
+.album:hover {
+    box-shadow: 0 0 10px #000;
+    background: #3e3e3e;
+}
+.album img {
+    width: 280px;
+    height: 280px;
+    display: table;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 15px;
+}
+.album .name {
+    font-size: 24px;
+    text-shadow: 0 2px 0 #000;
+    margin-top: 0;
+}
+.album .release-year {
+    font-size: 14px;
+    color: #898989;
+    float: right;
+}
+
+/*--- article ---*/
+.title {
+    margin: 5px 5px 5px 25%;
+    font-size: 75px;
+    text-shadow: 0 2px 0 #000;
+}
+.subtitle {
+    margin: 5px 5px 5px 25%;
+    font-size: 20px;
+    text-shadow: 0 2px 0 #000;
+}
+.content {
+    background: #171717;
+    border-radius: 10px;
+    width: 50%;
+    padding: 1%;
+    margin: 20px auto;
+}
+
+/*--- navigation bar ---*/
+.navbar {
+    background: rgba(0, 0, 0, 0.2);
+    margin: -10px 0 0;
+    height: 52px;
+    vertical-align: middle;
+    list-style-type: none;
+    -webkit-box-shadow: inset 0 -5px 5px -2px rgba(0, 0, 0, 0.2);
+}
+.navbar li.link a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 20px;
+    text-decoration: none;
+}
+.navbar .link a:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+.navbar a {
+    color: #28b075;
+    text-decoration: none;
+}
+
+/*--- account form ---*/
+.form {
+    list-style-type: none;
+    width: 95%;
+    margin: 0 auto;
+    overflow: auto;
+}
+.form .field {
+    border: none;
+    border-bottom: solid 2px #282828;
+    border-radius: 3px;
+    background: none;
+    box-sizing: border-box;
+    padding: 10px 16px;
+    width: 100%;
+    outline: none;
+    margin: 5px auto;
+    transition: 0.5s
+}
+.form option {
+    background: #2a2a2a;
+    color: #cacaca;
+    outline: none;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.form .field:focus {
+    border-bottom: solid 2px #585858;
+}
+.gender {
+    border-radius: 3px;
+    border-bottom: solid 2px #282828;
+    height: 36px;
+    list-style-type: none;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+.gender li {
+    float: left;
+    margin: 0 5px 0 0;
+    width: 32.2%;
+    position: relative;
+}
+.gender input {
+    display: block;
+    position: absolute;
+    margin: 0;
+}
+.gender input[type="radio"] {
+    opacity: 0;
+}
+.gender input[type="radio"]:checked + label {
+    background: #222;
+}
+.gender label {
+    display: block;
+    position: relative;
+    margin: 0;
+    border-radius: 3px;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+.gender label:hover {
+    background: #1c1c1c;
+}
+
+/*--- edit users ---*/
+table.users {
+    width: 98%;
+    margin: 0 auto;
+    border-radius: 3px;
+}
+.users th {
+    width: 16.66%;
+    padding: 5px 10px;
+    background: #2f2f2f;
+    border-radius: 3px;
+}
+.users td {
+    background: #3a3a3a;
+    border-radius: 3px;
+}
+.users input, select {
+    width: 120px;
+    outline: none;
+    background: none;
+    border: none;
+    background: #2a2a2a;
+    border-radius: 2px;
+    padding: 4px 8px;
+}
+.users select {
+    width: 136px;
+}
+.users input[readonly] {
+    background: #2f2f2f;
+    color: #a1a1a1;
+}
+.filter-by, .filter-text, .submit-filter {
+    outline: none;
+    background: none;
+    border: none;
+    background: #2a2a2a;
+    border-radius: 2px;
+    padding: 4px 8px;
+    margin-right: 2px;
+    margin-left: 2px;
+    height: 30px;
+    width: 100%;
+}
+.submit-filter:hover {
+    background: #363636;
+    cursor: pointer;
+}
+
+/*--- quiz ---*/
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    border: solid #2196F3 2px;
+    border-radius: 50%;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+.container .checkmark:after {
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #2196F3;
+}

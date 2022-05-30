@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ContentPages.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html lang="cs">
+<head runat="server">
+    <title><asp:ContentPlaceHolder id="pagetitle" runat="server"></asp:ContentPlaceHolder></title>
+    <link href="../StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <canvas id="glCanvas" width="1920" height="1200"></canvas>
+    <script type="text/javascript" src="../scripts/app.js"></script>
+
+    <!-- navigation bar -->
+    <ul class="navbar">
+        <li class="link"><a href="../Home.aspx">Home</a></li>
+        <%= pageLinks %>
+        <li class="right">
+            <p class="right-text" style="margin: -4px 0">
+                Hello <%= (string)Session["username"] %> <br />
+                <%= accountLinks %>
+            </p>
+        </li>
+    </ul>
+        
+    <!-- page title -->
+    <h1 class="title"><asp:ContentPlaceHolder id="title" runat="server"/></h1>
+    <h1 class="subtitle"><asp:ContentPlaceHolder id="subtitle" runat="server"/></h1>
+
+    <!-- content -->
+    <div class="content">
+        <form runat="server">
+            <asp:ContentPlaceHolder id="text" runat="server"/>
+        </form>
+    </div>
+
+    <!-- background -->
+    <%-- <div id="particles-js"></div> --%>
+    <%-- <script type="text/javascript" src="../scripts/particles.js"></script> --%>
+
+</body>
+</html>

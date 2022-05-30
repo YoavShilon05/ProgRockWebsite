@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="BandPages.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html lang="cs">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder id="pagetitle" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <link href="../StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    
+    <canvas id="glCanvas" width="1920" height="1200"></canvas>
+    <script type="text/javascript" src="../scripts/app.js"></script>
+
+    <!-- navigation bar -->
+    <ul class="navbar">
+        <li class="link"><a href="../Home.aspx">Home</a></li>
+        <li class="link"><a href="../Pink_Floyd.aspx">Pink Floyd</a></li>
+        <li class="link"><a href="../King_Crimson.aspx">King Crimson</a></li>
+        <li class="link"><a href="../Dire_Straits.aspx">Dire Straits</a></li>
+        <li class="link"><a href="../Favorite_Song.aspx">My Favorite Prog Song</a></li>
+        <li class="link"><a href="../Quiz.aspx">Quiz</a></li>
+        <li class="link"><a href="../DONATE!.aspx">DONATE!</a></li>
+        <li class="right">
+            <p class="right-text" style="margin: -4px 0">
+                Hello <%= (string)Session["username"] %> <br />
+                <%= accountLink %>
+            </p>
+        </li>
+    </ul>
+
+    <br/>
+
+    <!-- article title -->
+    <h1 class="title"><asp:ContentPlaceHolder id="title" runat="server"/></h1>
+    <h1 class="subtitle"><asp:ContentPlaceHolder id="subtitle" runat="server"/></h1>
+    <p class="bottom right wiki"><asp:ContentPlaceHolder id="wiki" runat="server"/></p>
+
+    <!-- content -->
+    <div class="content">
+
+        <!-- Members -->
+        <h1 id="members">Prominent Members</h1>
+        <asp:ContentPlaceHolder id="membersp" runat="server"/>
+        <hr />
+
+        <!-- Albums -->
+        <h1 id="albums">Some of the best Albums</h1>
+        <asp:ContentPlaceHolder id="albumsp" runat="server"/>
+        <hr />
+
+        <!-- Fun Facts -->
+        <h1 id="facts">Fun Facts</h1>
+        <asp:ContentPlaceHolder id="factsp" runat="server"/>
+        <hr /> <br />
+    </div>
+
+    <!-- Cool Background -->
+    <div id="particles-js"></div>
+    <script type="text/javascript" src="../scripts/particles.js"></script>
+    <script type="text/javascript" src="../scripts/app.js"></script>
+
+</body>
+</html>
